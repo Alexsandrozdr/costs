@@ -11,13 +11,13 @@ function ProjectForm({ btnText }) {
         type="text"
         text="Nome do projeto"
         name="name"
-        placeholder="Insira o nome do projeto"
+        placeholder="Insira o nome do projeto:"
       />
       <Input
         type="number"
         text="Orçamento do projeto"
         name="budget"
-        placeholder="Insira o orçamento total"
+        placeholder="Insira o orçamento total:"
       />
       <Select name="category_id" text="Selecione a categoria" />
       <SubmitButton text={btnText} />
