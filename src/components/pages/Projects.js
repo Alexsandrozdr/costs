@@ -49,7 +49,7 @@ function Projects() {
       },
     })
       .then((resp) => resp.json())
-      .then((data) => {
+      .then(() => {
         setProjects(projects.filter((project) => project.id !== id));
         setProjectMessage("Projeto removido com sucesso!");
       })
@@ -71,7 +71,7 @@ function Projects() {
               id={project.id}
               name={project.name}
               budget={project.budget}
-              category={project.category.name}
+              category={project.category}
               key={project.id}
               handleRemove={removeProject}
             />
