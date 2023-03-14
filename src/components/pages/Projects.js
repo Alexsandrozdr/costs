@@ -11,7 +11,7 @@ import ProjectCard from "../project/ProjectCard";
 import styles from "./Projects.module.css";
 
 function Projects() {
-  const [projects, setProjects] = useState([]);
+  const [project, setProject] = useState([]);
 
   const [removeLoading, setRemoveLoading] = useState(false);
 
@@ -34,7 +34,7 @@ function Projects() {
         .then((resp) => resp.json())
         .then((data) => {
           console.log(data);
-          setProjects(data);
+          setProject(data);
           setRemoveLoading(true);
         })
         .catch((err) => console.log(err));
@@ -50,7 +50,7 @@ function Projects() {
     })
       .then((resp) => resp.json())
       .then(() => {
-        setProjects(projects.filter((project) => project.id !== id));
+        setProject(project.filter((project) => project.id !== id));
         setProjectMessage("Projeto removido com sucesso!");
       })
       .catch((err) => console.log(err));
@@ -65,8 +65,8 @@ function Projects() {
       {message && <Message type="success" msg={message} />}
       {projectMessage && <Message type="success" msg={projectMessage} />}
       <Container customClass="start">
-        {projects.length > 0 &&
-          projects.map((project) => (
+        {project.length > 0 &&
+          project.map((project) => (
             <ProjectCard
               id={project.id}
               name={project.name}
@@ -77,7 +77,7 @@ function Projects() {
             />
           ))}
         {!removeLoading && <Loading />}
-        {removeLoading && projects.length === 0 && (
+        {removeLoading && project.length === 0 && (
           <p>Não há projetos cadastrados!</p>
         )}
       </Container>
