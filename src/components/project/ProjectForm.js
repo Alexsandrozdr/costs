@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 import Input from "../form/Input";
 import Select from "../form/Select";
@@ -9,6 +9,7 @@ import styles from "./ProjectForm.module.css";
 function ProjectForm({ handleSubmit, btnText, projectData }) {
   const [categories, setCategories] = useState([]);
   const [project, setProject] = useState(projectData || {});
+
   useEffect(() => {
     fetch("http://localhost:5001/categories", {
       method: "GET",

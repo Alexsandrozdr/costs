@@ -6,7 +6,7 @@ function Select({ text, name, options, handleOnChange, value }) {
       <select
         name={name}
         id={name}
-        handleOnChange={handleOnChange}
+        OnChange={handleOnChange}
         value={value || ""}
       >
         <option>Selecione uma opção</option>

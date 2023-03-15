@@ -7,13 +7,13 @@ import Projects from "./components/pages/Projects";
 import Project from "./components/pages/Project";
 
 import Container from "./components/layout/Container";
-import NavBar from "./components/layout/NavBar";
+import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
 
 function App() {
   return (
     <Router>
-      <NavBar />
+      <Navbar />
       <Container customClass="min-height">
         <Routes>
           <Route path="/" element={<Home />} />

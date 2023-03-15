@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import Container from "./Container";
 
-import styles from "./NavBar.module.css";
+import styles from "./Navbar.module.css";
 import logo from "../../img/costs_logo.png";
 
-function NavBar() {
+function Navbar() {
   return (
     <nav className={styles.navbar}>
       <Container>
@@ -15,18 +15,21 @@ function NavBar() {
           <li className={styles.item}>
             <Link to="/">Home</Link>
           </li>
+
           <li className={styles.item}>
-            <Link to="/projects">Projects</Link>
+            <Link to="/projects">Projetos</Link>
           </li>
+
           <li className={styles.item}>
-            <Link to="/company">Company</Link>
+            <Link to="/company">Empresa</Link>
           </li>
+
           <li className={styles.item}>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact">Contato</Link>
           </li>
         </ul>
       </Container>
     </nav>
   );
 }
-export default NavBar;
+export default Navbar;
